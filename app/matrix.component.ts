@@ -17,18 +17,9 @@ export class MatrixComponent {
     solution   : string;
 
     constructor() {
-        var count = 100;
         this.editable = true;
-        this.problem = new Problem(count, count);
+        this.problem = new Problem(1, 1);
         this.onChange();
-
-        for(let i = 0; i < count; i++) {
-            this.problem.providers[i].provides = rand(100, 10000);
-            this.problem.consumers[i].consumes = rand(100, 10000);
-            for(let j = 0; j < count; j++) {
-                this.problem.accords.accords[i][j].cost = rand(1, 9);
-            }
-        }
     }
 
     onChange() {
