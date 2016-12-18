@@ -1,0 +1,154 @@
+* {
+    background-color: #FCFAFA;
+}
+
+body {
+    margin: 0 auto;
+}
+
+h1 {
+    color: #403D39;
+    text-align: center;
+    margin: 24px;
+}
+
+table.matrix {
+    margin: 32px auto 32px auto;
+    border-collapse: separate;
+}
+
+table.matrix,
+table.matrix tr,
+table.matrix tr td,
+table.matrix tr th
+{
+    border: 1px solid black;
+    border-spacing: 2px;
+    text-align: center;
+}
+
+table.matrix tr,
+table.matrix tr td,
+table.matrix tr th
+{
+    border-collapse: collapse;
+    border-style: none;
+    background-color: #CCC5B9;
+}
+
+table.matrix input,
+table.matrix span
+{
+    width: 60px;
+    height: 30px;
+    text-align: center;
+    border: none;
+    display: block;
+    background-color: #CCC5B9;
+    word-wrap:break-word;
+}
+
+table.matrix input {
+    background-color: #FCFAFA;
+}
+table.matrix input[readonly] {
+    background-color: #CCC5B9;
+}
+
+table.matrix th > input {
+    width: 127px !important;
+    height: 67px !important;
+}
+
+table.accord,
+table.accord tr,
+table.accord tr td
+{
+    border: 1px solid black;
+    border-collapse: collapse;
+    border-spacing: 1px;
+    border-style: dotted;
+}
+
+table.accord .cost,
+table.accord .amount,
+table.accord .curve-node,
+table.accord .realloc-sign
+{
+}
+
+.button {
+    margin: 0 8px;
+    -moz-box-shadow:inset 0px 1px 0px 0px #f0cfad;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #f0cfad;
+    box-shadow:inset 0px 1px 0px 0px #f0cfad;
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #fa9e42), color-stop(1, #e6903a));
+    background:-moz-linear-gradient(top, #fa9e42 5%, #e6903a 100%);
+    background:-webkit-linear-gradient(top, #fa9e42 5%, #e6903a 100%);
+    background:-o-linear-gradient(top, #fa9e42 5%, #e6903a 100%);
+    background:-ms-linear-gradient(top, #fa9e42 5%, #e6903a 100%);
+    background:linear-gradient(to bottom, #fa9e42 5%, #e6903a 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fa9e42', endColorstr='#e6903a',GradientType=0);
+    background-color:#fa9e42;
+    border:1px solid #8a4f15;
+    display:inline-block;
+    cursor:pointer;
+    color:#693908;
+    font-family:Georgia;
+    font-size:16px;
+    font-weight:bold;
+    padding:8px 24px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #e0b386;
+}
+
+.button:hover {
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #e6903a), color-stop(1, #fa9e42));
+    background:-moz-linear-gradient(top, #e6903a 5%, #fa9e42 100%);
+    background:-webkit-linear-gradient(top, #e6903a 5%, #fa9e42 100%);
+    background:-o-linear-gradient(top, #e6903a 5%, #fa9e42 100%);
+    background:-ms-linear-gradient(top, #e6903a 5%, #fa9e42 100%);
+    background:linear-gradient(to bottom, #e6903a 5%, #fa9e42 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e6903a', endColorstr='#fa9e42',GradientType=0);
+    background-color:#e6903a;
+}
+
+.button:active {
+    position:relative;
+    top:1px;
+}
+
+.button:disabled {
+    background: none;
+    background-color: #CCC5B9;
+}
+
+#controls {
+    float: right;
+}
+
+/* Hide spin arrows */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+/* Rotate 90 degrees */
+.rotate90 {
+    transform:rotate(-90deg);
+    -moz-transform:rotate(-90deg);
+    -o-transform:rotate(-90deg);
+    -webkit-transform:rotate(-90deg);
+    -ms-transform:rotate(-90deg);
+    width: 100% !important;
+}
+
+#solution {
+    clear: both;
+    text-align: center;
+    margin: 16px 0;
+}
+

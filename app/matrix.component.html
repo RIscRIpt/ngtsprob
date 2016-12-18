@@ -1,0 +1,61 @@
+<table class="matrix">
+    <template ngFor let-row [ngForOf]="problem.accords.accords" let-first="first" let-pid="index" let-last="last">
+        <tr *ngIf="first">
+            <th colspan="3" rowspan="3">
+                <button (click)="reset()" class="button">Reset</button>
+            </th>
+            <th [attr.colspan]="problem.consumers.length">Consumers</th>
+            <th rowspan="3">
+                <button (click)="addConsumer()" [disabled]="!editable" class="button">+</button>
+            </th>
+        </tr>
+        <tr *ngIf="first">
+            <th *ngFor="let cid of problem.consumers; let cid = index" scope="col">
+                <button (click)="delConsumer(cid)" [disabled]="!editable" class="small-button">-</button>
+            </th>
+        </tr>
+        <tr *ngIf="first">
+            <th *ngFor="let consumer of problem.consumers" scope="col">
+                <input type="text" [readonly]="!editable" [(ngModel)]="consumer.name" (ngModelChange)="onChange($event)" placeholder="Consumer" />
+            </th>
+        </tr>
+        <tr>
+            <th *ngIf="first" [attr.rowspan]="problem.providers.length"><span class="rotate90">Providers</span></th>
+            <th scope="row">
+                <button (click)="delProvider(pid)" [disabled]="!editable" class="small-button">-</button>
+            </th>
+            <th scope="row">
+                <input type="text" [readonly]="!editable" [(ngModel)]="problem.providers[pid].name" (ngModelChange)="onChange($event)" placeholder="Provider" />
+            </th>
+            <template ngFor let-col [ngForOf]="row" let-last="last">
+                <td>
+                    <table class="accord">
+                        <tr>
+                            <td><input type="number" class="cost" [readonly]="!editable" [(ngModel)]="col.cost" (ngModelChange)="onChange($event)" placeholder="$" /></td>
+                            <td><span class="curve-node"></span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="realloc-sign"></span></td>
+                            <td><input type="number" class="amount" readonly="readonly" [(ngModel)]="col.amount" (ngModelChange)="onChange($event)" placeholder="amount" /></td>
+                        </tr>
+                    </table>
+                </td>
+                <th *ngIf="last">
+                    <input type="number" [readonly]="!editable" [(ngModel)]="problem.providers[pid].provides" (ngModelChange)="onChange($event)" placeholder="Provides" />
+                </th>
+            </template>
+        </tr>
+        <tr *ngIf="last">
+            <th colspan="3">
+                <button (click)="addProvider()" [disabled]="!editable" class="button">+</button>
+            </th>
+            <th *ngFor="let consumer of problem.consumers">
+                <input type="number" [readonly]="!editable" [(ngModel)]="consumer.consumes" (ngModelChange)="onChange($event)" placeholder="Consumes" />
+            </th>
+            <th>
+                <button (click)="solve()" [disabled]="!isSolvable" class="button">Solve</button>
+            </th>
+        </tr>
+    </template>
+</table>
+<div id="solution">{{solution}}</div>
